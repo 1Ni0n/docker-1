@@ -1,0 +1,2 @@
+docker service ps marines
+#docker-machine ssh Char "docker service logs -id- --follow" montre attaque des marines

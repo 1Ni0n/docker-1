@@ -1,0 +1,6 @@
+docker run -dt --name Abarthur -v ~/Abarthur:/root -p 3000:3000 python:2-slim
+docker exec -it Abarthur bash
+apt-get update && apt-get -y upgrade
+pip install Flask
+echo -e 'from flask import Flask\napp = Flask(__name__)\n\n@app.route("/")\ndef hello():\n    return "<h1>Hello World</h1>"' > root/hello.py
+FLASK_APP=root/hello.py flask run --host=0.0.0.0 --port=3000
